@@ -41,7 +41,7 @@ function attackAleatoireGoku(){
 }
 
 function attackAleatoireVegeta(){
-  if(vieVegeta <= 0){
+  if(vieGoku <= 0){
     barreDeVieGoku.textContent = "K.O"
   }
   let nbAleatoire = Math.floor(Math.random()*10)
@@ -51,15 +51,40 @@ function attackAleatoireVegeta(){
 
 }
 
+function healVegetaLife(chiffreAl){
+  vieVegeta = vieVegeta + chiffreAl
+  barreDeVieVegeta.style.width = vieVegeta + "%"
+  console.log(vieVegeta)
 
-function healAleatoireGoku(){
-  let nbAleatoire = Math.floor(Math.random()*5)
- 
+}
+
+function healGokuLife(chiffreAl){
+  vieGoku = vieGoku + chiffreAl
+  barreDeVieGoku.style.width = vieGoku + "%"
+  console.log(vieGoku)
 }
 
 
+function healAleatoireGoku(){
+  if(vieGoku >= 100){
+    barreDeVieGoku.textContent = "full"
+    btnHealGoku.disabled = true
+  }if(vieGoku<100){}
+    btnHealGoku.disabled = false
+  }
+  let chiffreAl = Math.floor(Math.random()*5)
+  healGokuLife(chiffreAl)
+  console.log(chiffreAl)
+ 
+
+
 function healAleatoireVegeta(){
-  let nbAleatoire = Math.floor(Math.random()*5)
+  if(vieVegeta >= 100){
+
+  }
+  let chiffreAl = Math.floor(Math.random()*5)
+  healVegetaLife(chiffreAl)
+  console.log(chiffreAl)
   
 }
 
