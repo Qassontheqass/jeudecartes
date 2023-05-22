@@ -14,6 +14,10 @@ btnHealVegeta.addEventListener("click",healAleatoireVegeta)
 
 let vieGoku = 100
 let vieVegeta = 100
+let player1 = "goku"
+let player2 = "vegeta"
+let currentPlayer = "goku"
+
 
 
 function updateLifeVegeta(nbAleatoire){
@@ -21,14 +25,12 @@ function updateLifeVegeta(nbAleatoire){
   barreDeVieVegeta.style.width = vieVegeta+ "%"
   console.log(vieVegeta)
 }
-console.log(nbAleatoire)
 
 function updateLifeGoku(nbAleatoire){
   vieGoku = vieGoku - nbAleatoire
   barreDeVieGoku.style.width = vieGoku+ "%"
   console.log(vieGoku)
 }
-console.log(nbAleatoire)
 
 
 function attackAleatoireGoku(){
@@ -37,8 +39,10 @@ function attackAleatoireGoku(){
     btnAttackGoku.disabled = true
   }
   let nbAleatoire = Math.floor(Math.random()*10)
-  console.log(nbAleatoire)
+  console.log("Végéta perd"+" "+ nbAleatoire+ " "+"PV")
   updateLifeVegeta(nbAleatoire)
+  currentPlayer = "vegeta"
+  checkTurn()
 }
 
 function attackAleatoireVegeta(){
@@ -47,16 +51,40 @@ function attackAleatoireVegeta(){
     btnAttackVegeta.disabled = true
   }
   let nbAleatoire = Math.floor(Math.random()*10)
-  console.log(nbAleatoire)
+  console.log("Goku perd"+" "+nbAleatoire+" "+"PV")
   updateLifeGoku(nbAleatoire)
+  currentPlayer = "goku"
+  checkTurn()
 
 
 }
+ 
+
+
+function checkTurn(){
+  if(currentPlayer == player1){
+    btnAttackVegeta.disabled = true
+    btnHealVegeta.disabled = true
+    btnAttackGoku.disabled = false
+    btnHealGoku.disabled = false
+  }
+  if(currentPlayer == player2){
+    btnAttackGoku.disabled = true
+    btnHealGoku.disabled = true
+    btnAttackVegeta.disabled = false
+    btnHealVegeta.disabled = false 
+  }
+  console.log('tour de ',currentPlayer)
+
+}
+
+checkTurn()
 
 function healVegetaLife(chiffreAl){
   vieVegeta = vieVegeta + chiffreAl
   barreDeVieVegeta.style.width = vieVegeta + "%"
   console.log(vieVegeta)
+
 
 }
 
@@ -71,12 +99,12 @@ function healAleatoireGoku(){
   if(vieGoku >= 100){
     barreDeVieGoku.textContent = "FULL"
     btnHealGoku.disabled = true
-  }if(vieGoku<100){
-    btnHealGoku.disabled = false
   }
   let chiffreAl = Math.floor(Math.random()*5)
   healGokuLife(chiffreAl)
-  console.log(chiffreAl)
+  console.log("Goku se régénère de"+" "+ chiffreAl+ " "+"PV")
+  currentPlayer = "vegeta"
+  checkTurn()
 }
 
 
@@ -87,7 +115,9 @@ function healAleatoireVegeta(){
   }
   let chiffreAl = Math.floor(Math.random()*5)
   healVegetaLife(chiffreAl)
-  console.log(chiffreAl)
+  currentPlayer = "goku"
+  checkTurn()
+  console.log("Végéta se régénère de"+" "+chiffreAl+" "+"PV")
   
 }
 
