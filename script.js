@@ -37,24 +37,29 @@ function attackAleatoireGoku(){
   if(vieVegeta <= 0){
     barreDeVieVegeta.textContent = "K.O"
     btnAttackGoku.disabled = true
+  }else{
+    let nbAleatoire = Math.floor(Math.random()*20)
+    console.log("Végéta perd"+" "+ nbAleatoire+ " "+"PV")
+    updateLifeVegeta(nbAleatoire)
+    currentPlayer = "vegeta"
+    checkTurn()
+    lifeBarColor()
   }
-  let nbAleatoire = Math.floor(Math.random()*10)
-  console.log("Végéta perd"+" "+ nbAleatoire+ " "+"PV")
-  updateLifeVegeta(nbAleatoire)
-  currentPlayer = "vegeta"
-  checkTurn()
+ 
 }
 
 function attackAleatoireVegeta(){
   if(vieGoku <= 0){
     barreDeVieGoku.textContent = "K.O"
     btnAttackVegeta.disabled = true
+  }else{
+    let nbAleatoire = Math.floor(Math.random()*20)
+    console.log("Goku perd"+" "+nbAleatoire+" "+"PV")
+    updateLifeGoku(nbAleatoire)
+    currentPlayer = "goku"
+    checkTurn()
+    lifeBarColor2()
   }
-  let nbAleatoire = Math.floor(Math.random()*10)
-  console.log("Goku perd"+" "+nbAleatoire+" "+"PV")
-  updateLifeGoku(nbAleatoire)
-  currentPlayer = "goku"
-  checkTurn()
 
 
 }
@@ -99,12 +104,14 @@ function healAleatoireGoku(){
   if(vieGoku >= 100){
     barreDeVieGoku.textContent = "FULL"
     btnHealGoku.disabled = true
-  }
-  let chiffreAl = Math.floor(Math.random()*5)
+  }else{
+    let chiffreAl = Math.floor(Math.random()*7)
   healGokuLife(chiffreAl)
   console.log("Goku se régénère de"+" "+ chiffreAl+ " "+"PV")
   currentPlayer = "vegeta"
   checkTurn()
+  }
+  
 }
 
 
@@ -112,12 +119,37 @@ function healAleatoireVegeta(){
   if(vieVegeta >= 100){
     barreDeVieVegeta.textContent = "FULL"
     btnHealVegeta.disabled = true
-  }
-  let chiffreAl = Math.floor(Math.random()*5)
+  }else{
+    let chiffreAl = Math.floor(Math.random()*7)
   healVegetaLife(chiffreAl)
   currentPlayer = "goku"
   checkTurn()
   console.log("Végéta se régénère de"+" "+chiffreAl+" "+"PV")
+  }
+
   
 }
 
+function lifeBarColor(){
+  if(vieVegeta <= 75 && vieVegeta >= 50){
+    barreDeVieVegeta.style.backgroundColor = "yellow"
+  }
+  if(vieVegeta < 50 && vieVegeta >= 25){
+    barreDeVieVegeta.style.backgroundColor = "orange"
+  }
+  if(vieVegeta < 25){
+    barreDeVieVegeta.style.backgroundColor = "red"
+  }
+}
+
+function lifeBarColor2(){
+  if(vieGoku <= 75 && vieGoku >= 50){
+    barreDeVieGoku.style.backgroundColor = "yellow"
+  }
+  if(vieGoku < 50 && vieGoku >= 25){
+    barreDeVieGoku.style.backgroundColor = "orange"
+  }
+  if(vieGoku < 25){
+    barreDeVieGoku.style.backgroundColor = "red"
+  }
+}
