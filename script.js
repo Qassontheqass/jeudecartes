@@ -34,6 +34,7 @@ console.log(nbAleatoire)
 function attackAleatoireGoku(){
   if(vieVegeta <= 0){
     barreDeVieVegeta.textContent = "K.O"
+    btnAttackGoku.disabled = true
   }
   let nbAleatoire = Math.floor(Math.random()*10)
   console.log(nbAleatoire)
@@ -43,6 +44,7 @@ function attackAleatoireGoku(){
 function attackAleatoireVegeta(){
   if(vieGoku <= 0){
     barreDeVieGoku.textContent = "K.O"
+    btnAttackVegeta.disabled = true
   }
   let nbAleatoire = Math.floor(Math.random()*10)
   console.log(nbAleatoire)
