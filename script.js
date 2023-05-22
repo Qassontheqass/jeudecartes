@@ -58,13 +58,20 @@ function healVegetaLife(chiffreAl){
 
 }
 
-fucntion healGokuLife(chiffreAl){
+function healGokuLife(chiffreAl){
   vieGoku = vieGoku + chiffreAl
   barreDeVieGoku.style.width = vieGoku + "%"
+  console.log(vieGoku)
 }
 
 
 function healAleatoireGoku(){
+  if(vieGoku >= 100){
+    barreDeVieGoku.textContent = "full"
+    btnHealGoku.disabled = true
+  }if(vieGoku<100){
+    btnHealGoku.disabled = false
+  }
   let chiffreAl = Math.floor(Math.random()*5)
   healGokuLife(chiffreAl)
   console.log(chiffreAl)
@@ -73,6 +80,9 @@ function healAleatoireGoku(){
 
 
 function healAleatoireVegeta(){
+  if(vieVegeta >= 100){
+
+  }
   let chiffreAl = Math.floor(Math.random()*5)
   healVegetaLife(chiffreAl)
   console.log(chiffreAl)
