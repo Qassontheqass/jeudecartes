@@ -102,16 +102,14 @@ function healGokuLife(chiffreAl){
 
 function healAleatoireGoku(){
   if(vieGoku >= 100){
-    barreDeVieGoku.textContent = "FULL"
+    barreDeVieGoku.textContent = "full"
     btnHealGoku.disabled = true
-  }else{
-    let chiffreAl = Math.floor(Math.random()*7)
+  }
+  let chiffreAl = Math.floor(Math.random()*5)
   healGokuLife(chiffreAl)
   console.log("Goku se régénère de"+" "+ chiffreAl+ " "+"PV")
   currentPlayer = "vegeta"
   checkTurn()
-  }
-  
 }
 
 
@@ -119,8 +117,8 @@ function healAleatoireVegeta(){
   if(vieVegeta >= 100){
     barreDeVieVegeta.textContent = "FULL"
     btnHealVegeta.disabled = true
-  }else{
-    let chiffreAl = Math.floor(Math.random()*7)
+  }
+  let chiffreAl = Math.floor(Math.random()*5)
   healVegetaLife(chiffreAl)
   currentPlayer = "goku"
   checkTurn()
