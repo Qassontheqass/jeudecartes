@@ -51,6 +51,12 @@ function attackAleatoireVegeta(){
 
 }
 
+function healVegetaLife(chiffreAl){
+  vieVegeta = vieVegeta + chiffreAl
+  console.log(vieVegeta)
+
+}
+
 
 function healAleatoireGoku(){
   let chiffreAl = Math.floor(Math.random()*5)
