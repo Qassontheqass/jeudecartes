@@ -125,8 +125,6 @@ function healAleatoireVegeta(){
   console.log("Végéta se régénère de"+" "+chiffreAl+" "+"PV")
   }
 
-  
-}
 
 function lifeBarColor(){
   if(vieVegeta <= 75 && vieVegeta >= 50){
