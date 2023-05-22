@@ -44,7 +44,7 @@ body {
 
 #vieGoku {
     height: 15px;
-    width: 400px;
+    width: 100%;
     background-color: green;
     border: 2px black solid;
 }
@@ -54,7 +54,7 @@ body {
     width: 100%;
     background-color: green;
     border: 2px black solid;
-    transform: rotate(180deg);
+   
 }
 
 /*SECTION 2*/
