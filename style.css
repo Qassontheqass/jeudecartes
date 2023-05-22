@@ -90,7 +90,32 @@ img {
 }
 
 button{
+    button{
+        padding: 5px 10px 5px 10px;
+        background: rgb(169, 236, 255);
+        border: 2px solid black;
+        border-radius: 4px;
+        font-size: larger;
     
+    }
+    /hover button/
+    #attackVegeta:hover{
+        background: rgb(174, 0, 0);
+        color: white;
+    
+    }
+    #attackGoku:hover{
+        background: rgb(174, 0, 0);
+        color: white;
+    }
+    #healVegeta:hover{
+        background: rgb(0, 174, 46);
+        color: white;
+    }
+    #healGoku:hover{
+        background: rgb(0, 174, 46);
+        color: white;
+    }
 }
 
 /*SECTION 3*/
