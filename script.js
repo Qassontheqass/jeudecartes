@@ -53,13 +53,15 @@ function attackAleatoireVegeta(){
 
 
 function healAleatoireGoku(){
-  let nbAleatoire = Math.floor(Math.random()*5)
+  let chiffreAl = Math.floor(Math.random()*5)
+  console.log(chiffreAl)
  
 }
 
 
 function healAleatoireVegeta(){
-  let nbAleatoire = Math.floor(Math.random()*5)
+  let chiffreAl = Math.floor(Math.random()*5)
+  console.log(chiffreAl)
   
 }
 
