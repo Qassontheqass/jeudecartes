@@ -41,7 +41,7 @@ function attackAleatoireGoku(){
 }
 
 function attackAleatoireVegeta(){
-  if(vieVegeta <= 0){
+  if(vieGoku <= 0){
     barreDeVieGoku.textContent = "K.O"
   }
   let nbAleatoire = Math.floor(Math.random()*10)
@@ -76,7 +76,6 @@ function healAleatoireGoku(){
   healGokuLife(chiffreAl)
   console.log(chiffreAl)
  
-}
 
 
 function healAleatoireVegeta(){
