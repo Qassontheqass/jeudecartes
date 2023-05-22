@@ -69,7 +69,7 @@ function healAleatoireGoku(){
   if(vieGoku >= 100){
     barreDeVieGoku.textContent = "full"
     btnHealGoku.disabled = true
-  }if(vieGoku<100){
+  }if(vieGoku<100){}
     btnHealGoku.disabled = false
   }
   let chiffreAl = Math.floor(Math.random()*5)
