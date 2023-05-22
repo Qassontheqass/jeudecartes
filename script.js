@@ -4,7 +4,8 @@ let barreDeVieGoku = document.querySelector("#vieGoku")
 let btnAttackVegeta = document.querySelector("#attackVegeta")
 let btnHealVegeta = document.querySelector("#healVegeta")
 let barreDeVieVegeta = document.querySelector("#vieVegeta")
-
+let imgGoku = document.querySelector("#card-img-goku")
+let imgVegeta = document.querySelector("#card-img-vegeta")
 console.log(btnAttackGoku)
 
 btnAttackGoku.addEventListener("click",attackAleatoireGoku)
@@ -133,23 +134,29 @@ function healAleatoireVegeta(){
 function lifeBarColor(){
   if(vieVegeta <= 75 && vieVegeta >= 50){
     barreDeVieVegeta.style.backgroundColor = "yellow"
+   
   }
   if(vieVegeta < 50 && vieVegeta >= 25){
     barreDeVieVegeta.style.backgroundColor = "orange"
+    imgVegeta.src = "vegeta.fatiguer.png"
   }
   if(vieVegeta < 25){
     barreDeVieVegeta.style.backgroundColor = "red"
+    imgVegeta.src = "mort.vegeta.png"
   }
 }
 
 function lifeBarColor2(){
   if(vieGoku <= 75 && vieGoku >= 50){
     barreDeVieGoku.style.backgroundColor = "yellow"
+    
   }
   if(vieGoku < 50 && vieGoku >= 25){
     barreDeVieGoku.style.backgroundColor = "orange"
+    imgGoku.src = "goku.fatiguer.png"
   }
   if(vieGoku < 25){
     barreDeVieGoku.style.backgroundColor = "red"
+    imgGoku.src = "mort.goku.png"
   }
 }
