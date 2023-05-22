@@ -66,7 +66,7 @@ body {
     background-repeat: no-repeat;
     height: 500px;
     padding-top: 80px;
-}/**/
+}
 
 #goku {
     width: 340px;
@@ -87,6 +87,10 @@ body {
 
 img {
     height: 400px;
+}
+
+button{
+    
 }
 
 /*SECTION 3*/
