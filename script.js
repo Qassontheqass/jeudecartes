@@ -1,4 +1,6 @@
 let btnAttackGoku = document.querySelector(#attackGoku)
 let btnHealGoku = document.querySelector(#healGoku)
+let barreDeVieGoku = document.querySelector(#vieGoku)
 let btnAttackVegeta = document.querySelector(#attackVegeta)
 let btnHealVegeta = document.querySelector(#healVegeta)
+let barreDeVieVegeta = document.querySelector(#vieVegeta)
