@@ -1,47 +1,83 @@
-body{
+body {
     margin: 0;
 
 }
 
 
 /*SECTION 1*/
-.section1{
+.section1 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
-  
+
 }
-#nomGoku{
-    padding: 10px 30px 10px 30px;
+
+
+/*NOM*/
+#nomGoku {
+    width: 100px;
+    padding: 10px 0px 10px 0px;
     background-color: rgb(218, 218, 218);
+    border: 2px black solid;
+    text-align: center;
+}
+
+
+#nomVegeta {
+   
+    background-color: rgb(218, 218, 218);
+    border: 2px black solid;
+    width: 100px;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+}
+
+/*  VIE  */
+
+#vieGoku {
+    height: 15px;
+    width: 400px;
+    background-color: green;
     border: 2px black solid;
 }
 
-
+#vieVegeta {
+    height: 15px;
+    width: 400px;
+    background-color: green;
+    border: 2px black solid;
+}
 
 /*SECTION 2*/
-.section2{
+.section2 {
     display: flex;
     justify-content: space-around;
     background: url(fondjeu.gif);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 600px;
+    height: 500px;
+    padding-top: 80px;
 }
-#goku{
+
+#goku {
     width: 340px;
-    }
-    #goku>img{
-        justify-content: center;
-    }
-#vegeta{
-width: 340px;
 }
-#flexButton{
+
+#goku>img {
+    justify-content: center;
+}
+
+#vegeta {
+    width: 340px;
+}
+
+#flexButton {
     display: flex;
-    
+
 }
-img{
-    height: 300px;
+
+img {
+    height: 400px;
 }
+
 /*SECTION 3*/
