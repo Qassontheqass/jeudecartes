@@ -20,20 +20,21 @@ let player2 = "vegeta"
 let currentPlayer = "goku"
 
 
-
+/* Fonction qui modifie la taille de la barre de vie de Végéta en fontion des dégats subit */
 function updateLifeVegeta(nbAleatoire){
   vieVegeta = vieVegeta - nbAleatoire
   barreDeVieVegeta.style.width = vieVegeta+ "%"
   console.log(vieVegeta)
 }
 
+/* Fonction qui modifie la taille de la barre de vie de Goku en fontion des dégats subit */
 function updateLifeGoku(nbAleatoire){
   vieGoku = vieGoku - nbAleatoire
   barreDeVieGoku.style.width = vieGoku+ "%"
   console.log(vieGoku)
 }
 
-
+/* Fonction qui permet à Goku d'attaquer Végéta et lui enlève des pv */
 function attackAleatoireGoku(){
   if(vieVegeta <= 0){
     barreDeVieVegeta.textContent = "K.O"
@@ -49,6 +50,7 @@ function attackAleatoireGoku(){
  
 }
 
+/* Fonction qui permet à Végéta d'attaquer Goku et lui enlève des pv */ 
 function attackAleatoireVegeta(){
   if(vieGoku <= 0){
     barreDeVieGoku.textContent = "K.O"
@@ -65,8 +67,7 @@ function attackAleatoireVegeta(){
 
 }
  
-
-
+/* Fonction qui permet le tour à tour*/
 function checkTurn(){
   if(currentPlayer == player1){
     btnAttackVegeta.disabled = true
@@ -86,6 +87,7 @@ function checkTurn(){
 
 checkTurn()
 
+/* Fonction qui permet à barre de vie Végéta d'augmenter en fonction du nb généré */
 function healVegetaLife(chiffreAl){
   vieVegeta = vieVegeta + chiffreAl
   barreDeVieVegeta.style.width = vieVegeta + "%"
@@ -94,13 +96,14 @@ function healVegetaLife(chiffreAl){
 
 }
 
+/* Fonction qui permet à barre de vie Goku d'augmenter en fonction du nb généré */
 function healGokuLife(chiffreAl){
   vieGoku = vieGoku + chiffreAl
   barreDeVieGoku.style.width = vieGoku + "%"
   console.log(vieGoku)
 }
 
-
+/* Fonction qui permet à Goku de se soigner en générant un nb aléatoire */
 function healAleatoireGoku(){
   if(vieGoku >= 100){
     barreDeVieGoku.textContent = "FULL"
@@ -112,10 +115,10 @@ function healAleatoireGoku(){
   currentPlayer = "vegeta"
   checkTurn()
   }
-  
+  lifeBarColor2()
 }
 
-
+/* Fonction qui permet à Végéta de se soigner en générant un nb aléatoire*/
 function healAleatoireVegeta(){
   if(vieVegeta >= 100){
     barreDeVieVegeta.textContent = "FULL"
@@ -128,13 +131,14 @@ function healAleatoireVegeta(){
   console.log("Végéta se régénère de"+" "+chiffreAl+" "+"PV")
   }
 
-  
+  lifeBarColor()
 }
 
+/* Modofie la couleur de la barre de vie Végéta en fonction nb pv */
 function lifeBarColor(){
   if(vieVegeta <= 75 && vieVegeta >= 50){
     barreDeVieVegeta.style.backgroundColor = "yellow"
-   
+    imgVegeta.src = "vegeta_debout.png"
   }
   if(vieVegeta < 50 && vieVegeta >= 25){
     barreDeVieVegeta.style.backgroundColor = "orange"
@@ -146,10 +150,11 @@ function lifeBarColor(){
   }
 }
 
+/* Modofie la couleur de la barre de vie Goku en fonction nb pv */
 function lifeBarColor2(){
   if(vieGoku <= 75 && vieGoku >= 50){
     barreDeVieGoku.style.backgroundColor = "yellow"
-    
+    imgGoku.src = "goku_debout.png"
   }
   if(vieGoku < 50 && vieGoku >= 25){
     barreDeVieGoku.style.backgroundColor = "orange"
