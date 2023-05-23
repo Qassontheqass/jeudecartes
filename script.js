@@ -165,3 +165,7 @@ function lifeBarColor2(){
     imgGoku.src = "mort.goku.png"
   }
 }
+
+function soundEffectGoku(){
+  
+}
