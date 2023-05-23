@@ -13,6 +13,14 @@ btnAttackVegeta.addEventListener("click",attackAleatoireVegeta)
 btnHealGoku.addEventListener("click",healAleatoireGoku)
 btnHealVegeta.addEventListener("click",healAleatoireVegeta)
 
+/*audio*/
+
+const atGoku = new Audio (kamehameha.swf.mp3)
+const atVegeta= new Audio (vegeta-final-flash.mp3)
+
+/**/
+
+
 let vieGoku = 100
 let vieVegeta = 100
 let player1 = "goku"
