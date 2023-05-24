@@ -15,8 +15,7 @@ btnHealVegeta.addEventListener("click",healAleatoireVegeta)
 
 /*audio*/
 
-const atGoku = new Audio (kamehameha.swf.mp3)
-const atVegeta= new Audio (vegeta-final-flash.mp3)
+
 
 /**/
 
@@ -26,6 +25,8 @@ let vieVegeta = 100
 let player1 = "goku"
 let player2 = "vegeta"
 let currentPlayer = "goku"
+let audioG = new Audio("kamehameha.swf.mp3")
+let audioV = new Audio("vegeta-final-flash.mp3")
 
 
 /* Fonction qui modifie la taille de la barre de vie de Végéta en fontion des dégats subit */
@@ -54,6 +55,7 @@ function attackAleatoireGoku(){
     currentPlayer = "vegeta"
     checkTurn()
     lifeBarColor()
+    audioG.play()
   }
  
 }
@@ -70,6 +72,7 @@ function attackAleatoireVegeta(){
     currentPlayer = "goku"
     checkTurn()
     lifeBarColor2()
+    audioV.play()
   }
 
 
