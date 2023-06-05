@@ -48,14 +48,14 @@ margin-left: 320px;
 
 #vieGoku {
     height: 15px;
-    width: 100%;
+    width: 99%;
     background-color: green;
     border: 2px black solid;
 }
 
 #vieVegeta {
     height: 15px;
-    width: 100%;
+    width: 99%;
     background-color: green;
     border: 2px black solid;
 }
@@ -95,7 +95,21 @@ img {
 
 
 button{
-    
+    color: white;
+    background: #8183C5;
+    border:  1px solid black;
+    padding: 15px 25px 15px 25px;
+    cursor: pointer;
 }
-
+#flexButtonV>#attackVegeta{
+padding-left: 30px;
+margin-right: 100px;
+}
+#flexButtonG>#attackGoku{
+   margin-left: 90px;
+margin-right: 80px;
+}
+#flexBtuttonG{
+    width: 500px;
+}
 /*SECTION 3*/

@@ -27,7 +27,7 @@ let player2 = "vegeta"
 let currentPlayer = "goku"
 let audioG = new Audio("kamehameha.swf.mp3")
 let audioV = new Audio("vegeta-final-flash.mp3")
-
+let audioH = new Audio("heal-sound.mp3")
 
 /* Fonction qui modifie la taille de la barre de vie de Végéta en fontion des dégats subit */
 function updateLifeVegeta(nbAleatoire){
@@ -103,6 +103,9 @@ function healVegetaLife(chiffreAl){
   vieVegeta = vieVegeta + chiffreAl
   barreDeVieVegeta.style.width = vieVegeta + "%"
   console.log(vieVegeta)
+  checkTurn()
+    lifeBarColor()
+    audioH.play()
 
 
 }
@@ -112,6 +115,10 @@ function healGokuLife(chiffreAl){
   vieGoku = vieGoku + chiffreAl
   barreDeVieGoku.style.width = vieGoku + "%"
   console.log(vieGoku)
+  checkTurn()
+  lifeBarColor2()
+  audioH.play()
+
 }
 
 /* Fonction qui permet à Goku de se soigner en générant un nb aléatoire */
@@ -147,16 +154,24 @@ function healAleatoireVegeta(){
 
 /* Modofie la couleur de la barre de vie Végéta en fonction nb pv */
 function lifeBarColor(){
+  if(vieVegeta <= 100 && vieVegeta >= 76){
+    barreDeVieVegeta.style.backgroundColor = "green"
+    imgVegeta.src = "vegeta_debout.png"
+  }
   if(vieVegeta <= 75 && vieVegeta >= 50){
     barreDeVieVegeta.style.backgroundColor = "yellow"
     imgVegeta.src = "vegeta_debout.png"
   }
-  if(vieVegeta < 50 && vieVegeta >= 25){
+  if(vieVegeta < 50 && vieVegeta >= 26){
     barreDeVieVegeta.style.backgroundColor = "orange"
     imgVegeta.src = "vegeta.fatiguer.png"
   }
-  if(vieVegeta < 25){
+  if(vieVegeta < 25 && vieVegeta >= 1){
     barreDeVieVegeta.style.backgroundColor = "red"
+    
+  }
+  if(vieVegeta <= 0){
+  
     imgVegeta.src = "mort.vegeta.png"
   }
 }
@@ -167,11 +182,15 @@ function lifeBarColor2(){
     barreDeVieGoku.style.backgroundColor = "yellow"
     imgGoku.src = "goku_debout.png"
   }
-  if(vieGoku < 50 && vieGoku >= 25){
+  if(vieGoku < 50 && vieGoku >= 1){
     barreDeVieGoku.style.backgroundColor = "orange"
     imgGoku.src = "goku.fatiguer.png"
   }
-  if(vieGoku < 25){
+  if(vieGoku < 25 && vieGoku >= 1){
+    barreDeVieGoku.style.backgroundColor = "red"
+    
+  }
+  if(vieGoku <= 0){
     barreDeVieGoku.style.backgroundColor = "red"
     imgGoku.src = "mort.goku.png"
   }
