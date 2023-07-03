@@ -178,6 +178,10 @@ function lifeBarColor(){
 
 /* Modofie la couleur de la barre de vie Goku en fonction nb pv */
 function lifeBarColor2(){
+  if(vieGoku <= 100 && vieGoku >= 76){
+    barreDeVieGoku.style.backgroundColor = "green"
+    imgGoku.src = "goku_debout.png"
+  }
   if(vieGoku <= 75 && vieGoku >= 50){
     barreDeVieGoku.style.backgroundColor = "yellow"
     imgGoku.src = "goku_debout.png"
